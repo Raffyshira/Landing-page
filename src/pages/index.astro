@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import footer from "../components/Footer.astro";
+
+import {
+  Image
+} from "astro:assets";
+import {
+  Button
+} from "@/components/ui/button.jsx";
+import {
+  CardProduct
+} from "../components/card-components.jsx";
+import {
+  AccordionFaq
+} from "../components/accordian-components.jsx";
+import {
+  Reveal
+} from "../components/reveal.jsx";
+import myImages from "../assets/images/modern4.jpg";
+
+import Marquee from "../components/magic-ui/marquee.jsx";
+import TextReveal from "../components/magic-ui/text-reveal.jsx";
+
+import {
+  MoveRight,
+  MoveUpRight
+} from "lucide-react"
+
+const listTags = ["Agriculture", "Technology", "Innovations", "Future", "Ai"]
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <section class="padding">
+      <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-x-4 h-full w-full">
+        <div>
+          <article class="h-fit">
+            <p class="bg-slate-200 w-fit px-2 py-1 rounded-full text-sm">
+              Agriculture Technology
+            </p>
+            <h1 class="text-4xl mt-2 font-Neue tracking-wide font-medium md:text-5xl">Revolutionizing Agriculture Through Technology</h1>
+            <Button className="mt-6 rounded-3xl md:mt-10">
+              <a class="inline-flex items-center" href="#!">Get Started <MoveRight className="h-4 w-4 ml-3" /></a>
+            </Button>
+          </article>
+          <div class="flex flex-col mt-10 bg-lime-100/80 rounded-3xl sm:flex-row  md:flex-row lg:flex-row space-x-3 md:p-4">
+            <figure class="shrink-0 p-2.5 relative overflow-hidden">
+              <img class="rounded-2xl md:aspect-[2/3] object-cover sm:w-36 md:w-40 lg:w-44" width={1600} height={720} src="/assets/farmer1.jpg" alt="a farmer who picks a vegetarian" />
+            </figure>
+            <article class="mt-2 md:mt-0 p-2">
+              <h3 class="font-NeueMedium text-xl md:font-NeueMedium lg:text-2xl">Streamlining Farm Operations with Tech Innovations</h3>
+              <p class="my-2 font-Neue ">
+                Discover cutting-edge solutions to enhance productivity, sustainabilty, and efficiency in farming practices
+              </p>
+            </article>
+          </div>
+        </div>
+        <figure class="mt-5 relative w-full h-full overflow-hidden md:mt-0">
+          <img class="w-[34rem] h-full aspect-square object-cover rounded-2xl" width="400" height="700" src="/assets/modern4.jpg" alt="a guy who pick up a dirt" loading="lazy" />
+        <div class="absolute bottom-5 left-5 text-white flex space-x-3 justify-start items-center overflow-x-scroll w-80 scrollbar md:w-full">
+          {listTags.map(item => (
+            <p key= { item } class="text-sm bg-black/40 p-2 rounded-full">
+              {
+                item
+              }
+            </p>
+            ))}
+            </div>
+          </figure>
+          </div>
+        </section>
+
+        <div class="mt-10 w-full h-full p-0">
+          <Marquee pauseOnHover className="[--duration:5s] w-full h-full bg-lime-100/80 p-4">
+            <h1 class="font-Neue text-2xl md:text-4xl">Transform Your Farm Solutions</h1>
+          </Marquee>
+        </div>
+
+        <section class="padding">
+          <div class="relative z-10 flex min-h-screen items-center justify-center rounded-lg bg-white">
+            <TextReveal text="We are is a pioneer in agricultural technology, dedicated to transforming the landscape of farming. With a passion for innovation, we strive to empower farmers with advanced tools and techniques to meet the challenges of modern agriculture" client:load />
+          </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto padding overflow-hidden">
+          <div class="bg-lime-200 p-2.5 rounded-3xl md:p-4 lg:p-5">
+            <div class="bg-lime-100/80 rounded-3xl">
+              <article class="p-5 grid grid-cols-1 md:grid-cols-2 gap-x-7 sm:space-x-10">
+                <div class="col-span-1">
+                  <h1 class="text-2xl font-Neue md:w-[29rem] md:text-5xl">Sustainable Agriculture Solutions: Nurturing Crops, Preserving Resources</h1>
+                </div>
+                <div class="mt-4 col-span-1 md:ml-5 md:mt-0">
+                  <p class="bg-white rounded-full px-2.5 py-1 w-fit text-sm font-Neue md:text-lg lg:text-xl">
+                    Our Product
+                  </p>
+                  <p class="font-Neue text-sm mt-20 md:text-lg lg:text-xl">
+                    Explore our range of innovative agricultural solutions designed to optimize crop yield, minimize resource usage, and streamline farming operations.
+                  </p>
+                  <Button className="rounded-xl font-Neue mt-5 text-sm ">Explore More <MoveRight className="w-4 h-4 ml-3" /></Button>
+                </div>
+              </article>
+            </div>
+            <div class="w-full h-full flex flex-row overflow-x-scroll gap-3">
+              <CardProduct src="/assets/drone1.jpg" number="01" title="Precision Farming Tools" text="This advanced technology utilizes precision sensors and data analysis to optimize every step of the agricultural process. from planting to harvest" client:load />
+              <CardProduct src="/assets/drone2.jpg" number="02" title="Smart Irrigation Systems" text="Our smart irrigation systems use sensors and automatic controls to regulate watering volume and schedules based on soil and weather condtions" client:load />
+              <CardProduct src="/assets/modern1.jpg" number="03" title="Smart Processing Resources" text="Our smart irrigation systems use sensors and automatic controls to regulate watering volume and schedules based on soil and weather condtions" client:load />
+            </div>
+          </div>
+        </section>
+        <section class="padding mt-10 max-w-7xl mx-auto padding overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5">
+            <div>
+              <h1 class="font-Neue text-4xl w-60 mb-5">Dive into Our Feature Set</h1>
+              <AccordionFaq client:load />
+            </div>
+            <div class="bg-lime-200 p-2.5 rounded-3xl border-none mt-3 md:mt-0">
+              <figure>
+                <img class="aspect-[16/9] object-cover w-full mx-auto rounded-3xl" src="/assets/drone4.jpg" alt="..." />
+            </figure>
+            <article class="bg-lime-100 rounded-3xl">
+              <p class="font-Neue p-3 mt-3 md:text-2xl">
+                Leverage advanced sensing technology adn data analytics to optimize planting, fertilizing and harvesting processes
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="mt-10 w-full h-full p-0">
+        <Marquee pauseOnHover reverse className="[--duration:5s] w-full h-full bg-lime-100/80 p-4">
+          <h1 class="font-Neue text-2xl md:text-4xl">Transform Your Farm Solutions</h1>
+        </Marquee>
+      </div>
+
+      <section class="max-w-7xl mx-auto padding overflow-hidden mt-10">
+        <div class="relative z-10">
+          <Image class="h-[28rem] object-cover rounded-2xl" src="/assets/modern2.jpg" alt="..." width="1000" height="300" />
+          <div class="absolute bottom-0 left-0 p-2 z-20 ">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-7">
+              <article class="w-full text-start bg-white p-2 rounded-2xl md:p-5 lg:p-7">
+                <p class="bg-slate-200 w-fit px-2 py-1 rounded-full text-sm font-Neue">
+                  Agriculture Technology
+                </p>
+                <p class="text-sm font-Neue mt-5">
+                  Our smart irrigation systems use sensors and automatic controls to regulate watering volume and schedules based on soil and weather condtions
+                </p>
+                <Button size="sm" className="w-full mt-5 rounded-2xl">Get Started <MoveRight className="h-4 w-4 ml-3" /></Button>
+              </article>
+              <h2 class="text-black text-3xl font-Neue md:w-96 bg-lime-100 p-2 rounded-2xl hidden md:block">Ready to Revolutionize Your Farming Practices</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </Layout>

@@ -1,0 +1,142 @@
+---
+const listFooter = [{
+  id: 1,
+  title: "Home",
+  link: "#!"
+},
+  {
+    id: 2,
+    title: "Product",
+    link: "#!"
+  },
+  {
+    id: 3,
+    title: "About Us",
+    link: "#!"
+  },
+  {
+    id: 4,
+    title: "Feature",
+    link: "#!"
+  },
+  {
+    id: 5,
+    title: "Precision Farming",
+    link: "#!"
+  },
+  {
+    id: 6,
+    title: "Smart Irrigation",
+    link: "#!"
+  },
+  {
+    id: 7,
+    title: "Predictive Analytics",
+    link: "#!"
+  },
+  {
+    id: 8,
+    title: "Mobile Accessiblity",
+    link: "#!"
+  },
+  {
+    id: 9,
+    title: "Blog",
+    link: "#!"
+  },
+  {
+    id: 10,
+    title: "Documentation",
+    link: "#!"
+  },
+  {
+    id: 11,
+    title: "Community",
+    link: "#!"
+  },
+  {
+    id: 12,
+    title: "Support",
+    link: "#!"
+  },
+  {
+    id: 13,
+    title: "Business Inquires",
+    link: "#!"
+  },
+  {
+    id: 14,
+    title: "Education",
+    link: "#!"
+  },
+]
+---
+
+<footer class="max-w-7xl mt-10 padding w-full h-full py-5">
+  <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4">
+    <article class="col-span-1">
+      <h1 class="text-6xl font-Neue tracking-wider mb-5">Harvest</h1>
+      <p class="font-Neue text-sm w-full sm:w-64 md:w-64 lg:w-64">
+        We are is a pioneer in agricultural technology, dedicated to transforming the landscape of farming. With a passion for innovation, we strive to empower farmers with advanced tools and techniques to meet the challenges of modern agriculture
+      </p>
+    </article>
+    <div class="col-span-2 grid grid-cols-2 sm:grid-cols-8 md:grid-cols-8 lg:grid-cols-8 gap-4">
+      <div class="col-span-2">
+        <h1 class="font-NeueBold mb-5">Navigations</h1>
+        <ul>
+          {listFooter && listFooter.slice(0, 4).map((item, index) => (
+            <li key= { index } class="mt-3">
+              <a class="font-Neue" href= { item.link } target="_blank" rel="noopener noreferrer">
+                {
+                  item.title
+                }
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <h1 class="font-NeueBold mb-5">Product</h1>
+        <ul>
+          {listFooter && listFooter.slice(4, 8).map((item, index) => (
+            <li key= { index } class="mt-3">
+              <a class="font-Neue" href= { item.link } target="_blank" rel="noopener noreferrer">
+                {
+                  item.title
+                }
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <h1 class="font-NeueBold mb-5">Resources</h1>
+        <ul>
+          {listFooter && listFooter.slice(8, 11).map((item, index) => (
+            <li key= { index } class="mt-3">
+              <a class="font-Neue" href= { item.link } target="_blank" rel="noopener noreferrer">
+                {
+                  item.title
+                }
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <h1 class="font-NeueBold mb-5">Contact</h1>
+        <ul>
+          {listFooter && listFooter.slice(11, 14).map((item, index) => (
+            <li key= { index } class="mt-3">
+              <a class="font-Neue" href= { item.link } target="_blank" rel="noopener noreferrer">
+                {
+                  item.title
+                }
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
